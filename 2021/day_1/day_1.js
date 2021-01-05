@@ -29,7 +29,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(#003344);
 
   // Go to the center
   translate(width / 2, height / 2);
