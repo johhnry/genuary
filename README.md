@@ -9,19 +9,19 @@ You can click on any animation below to open the source file, enjoy!
 
 ## 2021 edition
 
-| [![](./2021/day_1/genuary_1.gif)](./2021/day_1/day_1.js)<br><center>TRIPLE NESTED LOOP</center> |      |      |
-| ------------------------------------------------------------ | ---- | ---- |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
-|                                                              |      |      |
+| [![](./2021/day_1/genuary_1.gif)](./2021/day_1/day_1.js)<br><center>TRIPLE NESTED LOOP</center> | [![](./2021/day_2/genuary_2.gif)](./2021/day_2/day_2.js)<br/><center>[Rule 30](https://www.wolframalpha.com/input/?i=rule+30) ([elementary cellular automaton](https://en.wikipedia.org/wiki/Rule_30))</center> |      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---- |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
+|                                                              |                                                              |      |
 
 
 
