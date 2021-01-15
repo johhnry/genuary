@@ -62,8 +62,8 @@ class Vertex {
     this.z = v.z;
   }
 
-  display() {
-    point(this.x, this.y, this.z);
+  display(scaleFactor) {
+    point(this.x * scaleFactor, this.y * scaleFactor, this.z * scaleFactor);
   }
 }
 
@@ -293,32 +293,37 @@ class Mesh {
   /**
    * Display mesh with scale factor
    */
-  display(x, y, scaleFactor) {
+  display(x, y, scaleFactor, pointStrokeSize, lineStrokeSize, offset) {
     push();
     translate(x, y);
-    scale(scaleFactor);
 
-    // Display edges
-    strokeWeight(1);
-    stroke(255);
+    const amount = ((cos(offset * 2) + 1) / 2);
 
-    for (const face of this.faces) {
-      for (const edgeIndex of face.edgeIndices) {
-        const edge = this.edges[edgeIndex];
+    // Display edges and some vertices
+    for (let i = 0; i < this.faces.length * amount; i++) {
+      const face = this.faces[i];
+      for (let j = 0; j < face.edgeIndices.length * amount; j++) {
+        const edge = this.edges[face.edgeIndices[j]];
 
         const a = this.vertices[edge.vertexIndices[0]];
         const b = this.vertices[edge.vertexIndices[1]];
 
-        line(a.x, a.y, a.z, b.x, b.y, b.z);
+        stroke(255, 153, 0, 200);
+        strokeWeight(pointStrokeSize);
+        a.display(scaleFactor);
+        b.display(scaleFactor);
+
+        strokeWeight(lineStrokeSize);
+        stroke(255, 60);
+        line(a.x * scaleFactor, a.y * scaleFactor, a.z * scaleFactor, b.x * scaleFactor, b.y * scaleFactor, b.z * scaleFactor);
       }
     }
 
     // Display vertices
-    stroke("#ff9900");
-    strokeWeight(5);
+    strokeWeight(3);
 
     for (let vert of this.vertices) {
-      vert.display();
+      vert.display(scaleFactor);
     }
 
     pop();
@@ -375,24 +380,24 @@ let meshes = [];
 
 function setup() {
   createCanvas(500, 500, WEBGL);
-  
-  setAttributes('antialias', true);
-  
-  for (let i = 0; i < 4; i++) {
-    meshes[i] = cubeVertices();
+
+  for (let i = 0; i < 3; i++) {
+    meshes.push(cubeVertices());
     meshes[i].subdivide(i);
   }
 }
 
 function draw() {
   background("#003344");
-  
+
+  const index = round(((cos(PI + offset / 2) + 1) / 2) * (meshes.length - 1));
+  const pointStroke = map(index, 0, meshes.length - 1, 8, 3);
+  const lineStroke = map(index, 0, meshes.length - 1, 3, 1);
+
   rotateY(offset);
-  rotateX(offset / 2);
+  rotateX(offset / 2 );
 
-  meshes[int((offset) % meshes.length)].display(0, 0, 150);
-  
+  meshes[index].display(0, 0, 110, pointStroke, lineStroke, offset);
+
   offset += 0.01;
-  // noLoop();
 }
-
