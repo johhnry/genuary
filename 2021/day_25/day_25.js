@@ -1,8 +1,6 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
-let orange, red;
-
 function easeInOutCubic(x) {
   return x < 0.5 ? 4 * x * x * x : 1 - pow(-2 * x + 2, 3) / 2;
 }
