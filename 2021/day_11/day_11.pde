@@ -1,12 +1,14 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 int imageCounter = 0;
 PImage img;
 int time = 0;
 int changeTime = 1000;
 
-ArrayList<Particle> particles;
+List<Particle> particles;
 
 /**
  * Basic particle class

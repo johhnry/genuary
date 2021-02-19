@@ -1,6 +1,8 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 float easeInOutCubic(float x) {
   return x < 0.5 ? 4 * x * x * x : 1 - pow(-2 * x + 2, 3) / 2;
 }
@@ -57,7 +59,7 @@ class Permutation {
 
 class Set {
   float[] elements;
-  ArrayList<Permutation> permutations;
+  List<Permutation> permutations;
   
   Set(int size) {
     this.elements = new float[size];
@@ -168,7 +170,7 @@ class Set {
   }
 }
 
-ArrayList<Set> sets = new ArrayList<Set>();
+List<Set> sets = new ArrayList<Set>();
 int nSets = 10;
 int size = 300;
 

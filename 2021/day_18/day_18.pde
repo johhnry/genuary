@@ -1,6 +1,8 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 /**
  * Grid class holding cells
  */
@@ -109,7 +111,7 @@ class Particle {
   }
 }
 
-ArrayList<Particle> particles;
+List<Particle> particles;
 Grid grid;
 
 /**
@@ -168,7 +170,5 @@ void draw() {
   // If there's no more particles, start again
   if (particles.size() == 0) {
     initialize();
-    step++;
   }
 }
-

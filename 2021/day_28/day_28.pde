@@ -1,6 +1,8 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 final float margin = 70;
 
 /**
@@ -51,7 +53,7 @@ class Particle {
  */
 class Wave {
   float x, y;
-  ArrayList<Particle> particles;
+  List<Particle> particles;
   
   Wave(float x, float y, int nParticles, float speed) {
     this.x = x;
@@ -102,7 +104,7 @@ class Wave {
 class SoundSpeaker {
   float w, h;
   int rate, time;
-  ArrayList<Wave> waves;
+  List<Wave> waves;
   
   SoundSpeaker(float w, float h, int rate) {
     this.w = w;
@@ -188,4 +190,3 @@ void draw() {
   speaker.display();
   speaker.update();
 }
-

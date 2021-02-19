@@ -1,7 +1,10 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
-import java.util.*;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Vertex class contains three coordinates
@@ -169,11 +172,8 @@ class Mesh {
     List<Integer> faceIndices = new ArrayList<Integer>();
 
     for (int i = 0; i < this.faces.size(); i++) {
-      /*if (Arrays.asList(this.faces.get(i).edgeIndices).contains(edgeIndex)) {
-       faceIndices.add(i);
-       }*/
-
       int edgeIndices[] = this.faces.get(i).edgeIndices;
+      
       for (int j = 0; j < edgeIndices.length; j++) {
         if (edgeIndices[j] == edgeIndex) {
           faceIndices.add(i);
@@ -193,6 +193,7 @@ class Mesh {
 
     for (int i = 0; i < this.edges.size(); i++) {
       int vertexIndices[] = this.edges.get(i).vertexIndices;
+      
       for (int j = 0; j < vertexIndices.length; j++) {
         if (vertexIndices[j] == vertexIndex) {
           edgeIndices.add(i);
@@ -279,9 +280,7 @@ class Mesh {
       }
       Vertex R = average(edgesNextToP);
 
-      // Vertex newPosition = div(add(F, add(mult(R, 2), mult(P, n - 3))), n);
       Vertex newPosition = F.add(R.mult(2).add(P.mult(n - 3))).div(n);
-      //Vertex newPosition = new Vertex((F.x + 2 * R.x + (n - 3) * P.x)/n, (F.y + 2 * R.y + (n - 3) * P.y)/n, (F.z + 2 * R.z + (n - 3) * P.z)/n);
 
       P.set(newPosition);
     }
@@ -372,7 +371,6 @@ class Mesh {
     translate(x, y);
 
     // Display edges
-    
     float amount = ((cos(offset * 2) + 1) / 2);
 
     for (int i = 0; i < faces.size() * amount; i++) {
@@ -455,12 +453,9 @@ Mesh cubeVertices() {
 float offset = 0;
 List<Mesh> meshes = new ArrayList<Mesh>();
 
-void settings() {
-  System.setProperty("jogl.disable.openglcore", "true");
-  size(500, 500, P3D);
-}
-
 void setup() {
+  size(500, 500, P3D);
+  
   for (int i = 0; i < 5; i++) {
     meshes.add(cubeVertices());
     meshes.get(i).subdivide(i);
@@ -490,4 +485,3 @@ void draw() {
 
   offset += 0.01;
 }
-

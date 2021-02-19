@@ -1,6 +1,8 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 /**
  * Particle class containing a vector, speed and offset
  */
@@ -55,8 +57,8 @@ class Particle {
  * Create random particles at the bottom of the screen
  * the spread controls the size of the trunk
  */
-ArrayList<Particle> createRandomParticles(float spread, float margin) {
-  ArrayList<Particle> particles = new ArrayList<Particle>();
+List<Particle> createRandomParticles(float spread, float margin) {
+  List<Particle> particles = new ArrayList<Particle>();
   
   for (float x = (width - spread) / 2.0; x < (width + spread) / 2.0; x++) {
     float initialLife = random(100, 500);
@@ -67,7 +69,7 @@ ArrayList<Particle> createRandomParticles(float spread, float margin) {
   return particles;
 }
 
-ArrayList<Particle> particles;
+List<Particle> particles;
 float spread = 100;
 float margin = 50;
 
@@ -113,4 +115,3 @@ void draw() {
     noLoop();
   }
 }
-

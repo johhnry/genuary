@@ -1,6 +1,8 @@
 // (c) 2021 Joseph HENRY
 // This code is licensed under MIT license (see LICENSE for details)
 
+import java.util.List;
+
 /**
  * Anchor point of a bezier curve
  * It has a location and describe the control point
@@ -45,7 +47,7 @@ class AnchorPoint {
  * Bezier curve class contains an array of anchor points
  */
 class BezierCurve {
-  ArrayList<AnchorPoint> anchorPoints;
+  List<AnchorPoint> anchorPoints;
   
   BezierCurve() {
     this.anchorPoints = new ArrayList<AnchorPoint>();
