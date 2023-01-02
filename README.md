@@ -8,11 +8,11 @@ Here are the past editions, click on the title to see the animations!
 
 ## => [2021 Edition](./2021/README.md)
 
-<img src="./2021/day_10/genuary_10.gif" alt="genuary_10" style="zoom:50%;" />
+<img src="./2021/day_10/genuary_10.gif" alt="genuary_10" width="400" />
 
 ## => [2023 Edition](./2023/README.md)
 
-<img src="./2023/day_1/genuary_1.gif" alt="genuary_1" style="zoom:62%;" />
+<img src="./2023/day_1/genuary_1.gif" alt="genuary_1" width="400" />
 
 ## Links
 
