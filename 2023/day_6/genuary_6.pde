@@ -1,4 +1,5 @@
 // (c) 2023 Joseph HENRY
+// Credit: Vahram Muratyan
 // This code is licensed under MIT license (see LICENSE for details)
 
 float computeGradient(float fac, float middle, float size) {

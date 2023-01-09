@@ -1,4 +1,5 @@
 // (c) 2023 Joseph HENRY
+// Credit: Vahram Muratyan
 // This code is licensed under MIT license (see LICENSE for details)
 
 function computeGradient(fac, middle, size) {
